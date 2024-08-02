@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>JS Game</title>
+</head>
+
+<body>
+    <div>
+        <label for="nombre">Encriptador:</label>
+        <input type="text" id="criptacion"  placeholder="Ingrese su nombre" maxlength="500" size="100">
+    </div>
+    <button onclick="encriptar();">Encriptar</button>
+    <button onclick="desencriptar();">Desencriptar</button>
+    <div>
+       <input type="text" id="muestra" name="nombre" placeholder="Ingrese su nombre" value="" maxlength="500" readonly size="100"> 
+    </div>
+    <script src="app.js" defer></script>
+</body>
+
+</html>
