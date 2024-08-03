@@ -1,5 +1,5 @@
-var p1 = 3;
-var p2 = 11;
+var p1 = 7;
+var p2 = 5;
 var n = p1*p2;
 var phyn = (p1-1)*(p2-1);
 var abecedario = ["a", "b", "c","d", "e", "f","g", "h", "i","j", "k", "l","m", "n", "ñ","o", "p", "q","r", "s", "t","u", "v", "w","x", "y","z", " "];
@@ -144,6 +144,7 @@ function desencriptar(){
             d++
         }
     }
+    // junta los numeros y los mete en una lista
     for (i = 0; i < letraxletra.length;) {
         let num1 =String(letraxletra[i]);
         let num2 =String(letraxletra[i+1]);
@@ -151,7 +152,7 @@ function desencriptar(){
         listaconnumeros2.push(combinedString);
         i=i+3
     }
-
+    // descifra los numeros y los que son de un digito les agrega un 0 a la izquierda y los mete en una lista
     for (i = 0; i < listaconnumeros2.length; i++) {
         let num=expModZViaCuadradoRepetido(listaconnumeros2[i], d, n);
         if(num<10){
@@ -167,7 +168,7 @@ function desencriptar(){
        
     }
     const j=listaconnumerosdesencrip.length;
-
+    // toma los numeros desencriptados y los vuelve letras de nuevo para asi meterlos en una lista
     for (let i = 0; i < j; i++  ) {
         for (let n = 0; n < 28;n++) {
             if(listaconnumerosdesencrip[i]==n){
@@ -176,7 +177,8 @@ function desencriptar(){
         }
     }
 
-    let arrayString = listaconnumerosdes.join(' ');
+    //junta los elementos de la lista
+    let arrayString = listaconnumerosdes.join('');
     muestra.value = arrayString;
 
 
