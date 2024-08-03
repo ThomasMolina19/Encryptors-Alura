@@ -1,4 +1,4 @@
-var p1 = 7;
+var p1 = 11;
 var p2 = 5;
 var n = p1*p2;
 var phyn = (p1-1)*(p2-1);
