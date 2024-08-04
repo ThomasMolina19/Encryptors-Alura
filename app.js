@@ -1,9 +1,10 @@
-var p1 = 11;
-var p2 = 5;
+var p1 = 5;
+var p2 = 11;
 var n = p1*p2;
 var phyn = (p1-1)*(p2-1);
 var abecedario = ["a", "b", "c","d", "e", "f","g", "h", "i","j", "k", "l","m", "n", "ñ","o", "p", "q","r", "s", "t","u", "v", "w","x", "y","z", " "];
 
+// cifra los numeros
 function expModZViaCuadradoRepetido(a, n, z) {
     let resultado = 1;
     let x = a % z;
@@ -65,15 +66,7 @@ function encriptar(){
         }
 
     }
-    // encuentra el d
-    while (true){
-        d = (1+(k*phyn))/e;
-        if(Number.isInteger(d)){
-            break;
-        }else{
-            d++
-        }
-    }
+
     // encripta los numeros y los mete en una lista
     for (i = 0; i < listaconnumeros.length; i++) {
         let num=expModZViaCuadradoRepetido(listaconnumeros[i], e, n);
@@ -91,19 +84,6 @@ function encriptar(){
     }
     let arrayString = listaconnumerosencrip.join(' ');
     muestra.value = arrayString;
-
-
-
-    console.log(d);
-    console.log(expModZViaCuadradoRepetido(7, 7, 33));
-    // console.log(letraxletra);
-    // console.log(typeof letraxletra);
-    // console.log(listaconnumeros);
-    // console.log( abecedario.length);
-    console.log(listaconnumerosencrip);
-
-
-
 
     return;
 
@@ -141,7 +121,7 @@ function desencriptar(){
         if(Number.isInteger(d)){
             break;
         }else{
-            d++
+            k++
         }
     }
     // junta los numeros y los mete en una lista
