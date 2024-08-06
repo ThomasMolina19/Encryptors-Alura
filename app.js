@@ -1,8 +1,9 @@
-var p1 = 5;
-var p2 = 11;
+var p1 = 202403;
+var p2 = 201389;
 var n = p1*p2;
 var phyn = (p1-1)*(p2-1);
 var abecedario = ["a", "b", "c","d", "e", "f","g", "h", "i","j", "k", "l","m", "n", "ñ","o", "p", "q","r", "s", "t","u", "v", "w","x", "y","z", " "];
+let listaensayo;
 
 // cifra los numeros
 function expModZViaCuadradoRepetido(a, n, z) {
@@ -94,6 +95,8 @@ function desencriptar(){
     let e=2;
     let k=1;
     let d=0;
+    let listaensayo =[''];
+    let listaensayo1 =[];
     const muestra = document.getElementById('muestra');
     const text = document.getElementById('criptacion');
     const texto =text.value; 
@@ -134,6 +137,7 @@ function desencriptar(){
     }
     // descifra los numeros y los que son de un digito les agrega un 0 a la izquierda y los mete en una lista
     for (i = 0; i < listaconnumeros2.length; i++) {
+
         let num=expModZViaCuadradoRepetido(listaconnumeros2[i], d, n);
         if(num<10){
             let zero = '0'
@@ -148,6 +152,7 @@ function desencriptar(){
        
     }
     const j=listaconnumerosdesencrip.length;
+    console.log(listaconnumerosdesencrip);
     // toma los numeros desencriptados y los vuelve letras de nuevo para asi meterlos en una lista
     for (let i = 0; i < j; i++  ) {
         for (let n = 0; n < 28;n++) {
@@ -156,18 +161,29 @@ function desencriptar(){
             }   
         }
     }
+    const w=letraxletra.length;
+    for (let i = 0; i < w;) {
+        if(letraxletra[i+1] != ' '){
+            let num3 =String(letraxletra[i]);
+            listaensayo.push(num3);
+            console.log(listaensayo);
+            i++
+        }else 
+            if (letraxletra[i+1] == ' '){
+                let result1;
+                let num3 =String(letraxletra[i]);
+                listaensayo.push(num3);
+                result1=listaensayo.join("");
+                listaensayo1.push(result1);
+                listaensayo=[];
+                i=i+2
+        }
+    }
 
     //junta los elementos de la lista
     let arrayString = listaconnumerosdes.join('');
-    muestra.value = arrayString;
-
-
-
-    console.log(listaconnumeros2);
-    console.log(listaconnumerosdesencrip);
-
-    
-
+    muestra.value = arrayString;  
+    console.log(listaensayo1);
 }
 
 
