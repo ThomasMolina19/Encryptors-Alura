@@ -1,5 +1,5 @@
-var p1 = 202403;
-var p2 = 201389;
+var p1 = 300000119;
+var p2 = 300002257;
 var n = p1*p2;
 var phyn = (p1-1)*(p2-1);
 var abecedario = ["a", "b", "c","d", "e", "f","g", "h", "i","j", "k", "l","m", "n", "ñ","o", "p", "q","r", "s", "t","u", "v", "w","x", "y","z", " "];
@@ -166,8 +166,8 @@ function desencriptar(){
         if(letraxletra[i+1] != ' '){
             let num3 =String(letraxletra[i]);
             listaensayo.push(num3);
-            console.log(listaensayo);
             i++
+            console.log(listaensayo,i);
         }else 
             if (letraxletra[i+1] == ' '){
                 let result1;
@@ -177,7 +177,17 @@ function desencriptar(){
                 listaensayo1.push(result1);
                 listaensayo=[];
                 i=i+2
-        }
+            }
+        if (letraxletra.length==(i+1)){
+            let result1;
+            let num3 =String(letraxletra[i]);
+            listaensayo.push(num3);
+            num3 =String(letraxletra[i+1])
+            result1=listaensayo.join("");
+            listaensayo1.push(result1);
+            listaensayo=[];
+            break;            
+            }
     }
 
     //junta los elementos de la lista
