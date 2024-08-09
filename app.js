@@ -1,21 +1,38 @@
-var p1 = 300000119;
-var p2 = 300002257;
+var p1 = 127;
+var p2 = 137;
 var n = p1*p2;
 var phyn = (p1-1)*(p2-1);
 var abecedario = ["a", "b", "c","d", "e", "f","g", "h", "i","j", "k", "l","m", "n", "ñ","o", "p", "q","r", "s", "t","u", "v", "w","x", "y","z", " "];
 let listaensayo;
 
-// cifra los numeros
-function expModZViaCuadradoRepetido(a, n, z) {
-    let resultado = 1;
-    let x = a % z;
 
-    while (n > 0) {
-        if (n % 2 === 1) { // Si n es impar
-            resultado = (resultado * x) % z;
+ // halla el maximo comun divisor entre phy(n) y e, para poder encontrar el e apropiado que de como resultado gcd(e,phy(n))=1
+function mcd(a,b){
+    while (true){
+        gcd(a, b);
+        if(gcd(a, phyn)==1){
+            console.log(a);
+            console.log(gcd(a, b));
+            break;
+        }else{
+            a++
         }
-        x = (x * x) % z; // Cuadrar x
-        n = Math.floor(n / 2); // Dividir n entre 2 y redondear hacia abajo
+    }
+    return a;
+}
+//encripta o desencripta los numeros con la formula a^n mod z
+function expModZViaCuadradoRepetido(a, n, z) {
+    let resultado = BigInt(1);
+    let x = BigInt(a) % BigInt(z);
+    let nBigInt = BigInt(n);
+    let zBigInt = BigInt(z);
+
+    while (nBigInt > 0) {
+        if (nBigInt % BigInt(2) === BigInt(1)) { // Si n es impar
+            resultado = (resultado * x) % zBigInt;
+        }
+        x = (x * x) % zBigInt; // Cuadrar x
+        nBigInt = nBigInt / BigInt(2); // Dividir n entre 2
     }
 
     return resultado;
@@ -35,12 +52,10 @@ function gcd(a, b) {
 
 function encriptar(){
     let e=2;
-    let k=1;
-    let d=0;
     const text = document.getElementById('criptacion');
     const muestra = document.getElementById('muestra');
     const texto =text.value; 
-    // divide los eemntos uno por uno en la lista
+    // divide los elementos uno por uno en la lista
     let letraxletra = texto.split('');
     letraxletra;
     listaconnumeros=[];
@@ -55,19 +70,7 @@ function encriptar(){
             }   
         }
     }
-    // halla el maximo comun divisor entre phy(n) y e, para poder encontrar el e apropiado que de como resultado gcd(e,phy(n))=1
-    while (true){
-        gcd(e, phyn);
-        if(gcd(e, phyn)==1){
-            console.log(e);
-            console.log(gcd(e, phyn));
-            break;
-        }else{
-            e++
-        }
-
-    }
-
+    e=mcd(e,phyn);
     // encripta los numeros y los mete en una lista
     for (i = 0; i < listaconnumeros.length; i++) {
         let num=expModZViaCuadradoRepetido(listaconnumeros[i], e, n);
@@ -85,9 +88,7 @@ function encriptar(){
     }
     let arrayString = listaconnumerosencrip.join(' ');
     muestra.value = arrayString;
-
-    return;
-
+    console.log(texto);
 }
 
 function desencriptar(){
@@ -95,29 +96,16 @@ function desencriptar(){
     let e=2;
     let k=1;
     let d=0;
-    let listaensayo =[''];
     let listaensayo1 =[];
     const muestra = document.getElementById('muestra');
     const text = document.getElementById('criptacion');
     const texto =text.value; 
     // divide los elemntos uno por uno en la lista
     let letraxletra = texto.split('');
-    let listaconnumeros2 =[]; 
     let listaconnumerosdesencrip =[];
     letraxletra;
     console.log(letraxletra);
-    // halla el maximo comun divisor entre phy(n) y e, para poder encontrar el e apropiado que de como resultado gcd(e,phy(n))=1
-    while (true){
-        gcd(e, phyn);
-        if(gcd(e, phyn)==1){
-            console.log(e);
-            console.log(gcd(e, phyn));
-            break;
-        }else{
-            e++
-        }
-
-    }
+    e=mcd(e,phyn);
     // encuentra el d
     while (true){
         d = (1+(k*phyn))/e;
@@ -127,29 +115,26 @@ function desencriptar(){
             k++
         }
     }
+    
+    
     // junta los numeros y los mete en una lista
-    for (i = 0; i < letraxletra.length;) {
-        let num1 =String(letraxletra[i]);
-        let num2 =String(letraxletra[i+1]);
-        let combinedString = num1.toString() + num2.toString();
-        listaconnumeros2.push(combinedString);
-        i=i+3
-    }
+    listaensayo1 = texto.split(" ");  // Divide la cadena en un array usando "-" como separador
+    
+    const enteros = listaensayo1.map(num => parseInt(num));
     // descifra los numeros y los que son de un digito les agrega un 0 a la izquierda y los mete en una lista
-    for (i = 0; i < listaconnumeros2.length; i++) {
-
-        let num=expModZViaCuadradoRepetido(listaconnumeros2[i], d, n);
-        if(num<10){
+    for (i = 0; i < listaensayo1.length; i++) {
+        let nume=expModZViaCuadradoRepetido(enteros[i], d, n);
+        console.log(enteros[i]);
+        if(nume<10){
             let zero = '0'
-            let letra=String(num);
+            let letra=String(nume);
             let combinedString = zero.toString() + letra.toString();
             listaconnumerosdesencrip.push(combinedString);
 
         }else{
-            let letra=String(num);
+            let letra=String(nume);
             listaconnumerosdesencrip.push(letra);
         }
-       
     }
     const j=listaconnumerosdesencrip.length;
     console.log(listaconnumerosdesencrip);
@@ -161,39 +146,10 @@ function desencriptar(){
             }   
         }
     }
-    const w=letraxletra.length;
-    for (let i = 0; i < w;) {
-        if(letraxletra[i+1] != ' '){
-            let num3 =String(letraxletra[i]);
-            listaensayo.push(num3);
-            i++
-            console.log(listaensayo,i);
-        }else 
-            if (letraxletra[i+1] == ' '){
-                let result1;
-                let num3 =String(letraxletra[i]);
-                listaensayo.push(num3);
-                result1=listaensayo.join("");
-                listaensayo1.push(result1);
-                listaensayo=[];
-                i=i+2
-            }
-        if (letraxletra.length==(i+1)){
-            let result1;
-            let num3 =String(letraxletra[i]);
-            listaensayo.push(num3);
-            num3 =String(letraxletra[i+1])
-            result1=listaensayo.join("");
-            listaensayo1.push(result1);
-            listaensayo=[];
-            break;            
-            }
-    }
-
+    
     //junta los elementos de la lista
     let arrayString = listaconnumerosdes.join('');
-    muestra.value = arrayString;  
-    console.log(listaensayo1);
+    muestra.value = arrayString;
 }
 
 
