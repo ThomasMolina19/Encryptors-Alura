@@ -1,5 +1,5 @@
-var p1 = 127;
-var p2 = 137;
+var p1 = 167;
+var p2 = 149;
 var n = p1 * p2;
 var phyn = (p1 - 1) * (p2 - 1);
 var abecedario = [
@@ -60,23 +60,15 @@ function mcd(a, b) {
 
 //encripta o desencripta los numeros con la formula a^n mod z
 function expModZViaCuadradoRepetido(a, n, z) {
+  let resultado = 1;
+  let x = a % z;
 
-  let resultado = BigInt(1);
-  let x = BigInt(a) % BigInt(z);
-  let nBigInt = BigInt(n);
-  let zBigInt = BigInt(z);
-
-  while (nBigInt > 0) {
-
-    if (nBigInt % BigInt(2) === BigInt(1)) {
-      // Si n es impar
-      resultado = (resultado * x) % zBigInt;
-
-    }
-
-    x = (x * x) % zBigInt; // Cuadrar x
-    nBigInt = nBigInt / BigInt(2); // Dividir n entre 2
-
+  while (n > 0) {
+      if (n % 2 === 1) { // Si n es impar
+          resultado = (resultado * x) % z;
+      }
+      x = (x * x) % z; // Cuadrar x
+      n = Math.floor(n * (0.5)); // Dividir n entre 2 y redondear hacia abajo
   }
 
   return resultado;
@@ -225,6 +217,26 @@ function desencriptar() {
 
   //junta los elementos de la lista
   let arrayString = listnumerosdes.join("");
-  
   muestra.value = arrayString;
 }
+
+function copiar(){
+
+  //utiliza la api clipboard.api
+  const val = document.getElementById("muestra").value;
+  navigator.clipboard.writeText(val);
+
+
+}
+
+function pegar(){
+  
+  navigator.clipboard.readText().then(function(clipText) {
+    
+    document.getElementById("criptacion").value = clipText;
+    }, function() {
+    alert("Failed to access clipboard.");
+    })
+}
+
+
