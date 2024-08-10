@@ -1,36 +1,59 @@
-body {
-    background-image: url('./img/matrix.jpg');
+/* Estilo básico para el cuerpo */
+body, html {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.texto-colorido {
-    color: blueviolet;  /* Cambia el color del texto aquí */
-}
-.container{
-    display: inline-block;
-}
-.text{
-    font-size: 2.5em; 
-    letter-spacing: 3px; 
-    font-family: monospace; 
-    border-right: 5px solid;
-    width: 95%; 
-    white-space:nowrap;
     overflow: hidden;
-    animation:
-        typing 3s,
-        cursor .4s step-end infinite alternate;
-
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
 }
-@keyframes cursor{
-    50%{border-color: greenyellow;}
 
+/* Estilo para el canvas */
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-@keyframes typing{
-    from { width:0 }
+/* Estilo para los contenedores de entrada y botones */
+.overlay {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre los divs */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para los inputs y botones */
+.overlay input, .overlay button {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00cc33;
+    color: #00cc33;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 300px; /* Ajusta el ancho de los inputs */
+}
+
+/* Estilo para los botones al pasar el mouse */
+.overlay button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-color: #00ff44;
+}
+
+/* Estilo para el input de solo lectura */
+.text {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00cc33;
+    color: #00cc33;
+    font-size: 16px;
 }
