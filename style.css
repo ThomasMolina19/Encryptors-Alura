@@ -57,3 +57,20 @@ body, html {
     color: #00cc33;
     font-size: 16px;
 }
+
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; /* Aumentar la duración para una animación más fluida */
+}
+
+ /* Simula el estado "hundido" del botón */
+ .button.pressed {
+    background-color: #0056b3; /* Color más oscuro */
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.4); /* Sombras internas */
+    transform: translateY(2px); /* Simula la presión hacia abajo */}

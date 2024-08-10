@@ -11,6 +11,10 @@ var columns = Math.floor(W / fontSize);
 var drops = [];
 var rainInterval;
 var isRaining = true;
+var str = "JavaScript Hacking Effect";
+// Obtener los botones por su ID
+var button1 = document.getElementById('button1');
+var button2 = document.getElementById('button2');
 var abecedario = [
   "a",
   "b",
@@ -101,7 +105,7 @@ function gcd(a, b) {
 
 }
 
-function encriptar() {
+function encriptarRsa() {
 
   const text = document.getElementById("criptacion");
   const muestra = document.getElementById("muestra");
@@ -161,7 +165,7 @@ function encriptar() {
   console.log(texto);
 }
 
-function desencriptar() {
+function desencriptarRsa() {
 
   let listnumerosdes = [];
   let e = 2;
@@ -230,7 +234,7 @@ function desencriptar() {
   muestra.value = arrayString;
 }
 
-function encriptacionalura() {
+function encriptacionAlura() {
 
   const text = document.getElementById("criptacion");
   const muestra = document.getElementById("muestra");
@@ -326,13 +330,78 @@ function toggleRain() {
 }
 
 
+// Función para manejar el clic en los botones
+function handleButtonClick(clickedButton) {
+  
+  if (clickedButton.classList.contains('pressed')) {
+      return;
+  }
+
+  // Alternar el estado del botón clicado
+  clickedButton.classList.add('pressed');
+
+  // Deshacer el estado hundido del otro botón
+  if (clickedButton === button1) {
+      button2.classList.remove('pressed');
+  } else {
+      button1.classList.remove('pressed');
+  }
+}
+
+// Función para determinar cuál botón está hundido
+function Encriptar() {
+
+  if (button1.classList.contains('pressed')) {
+
+      encriptacionAlura();
+
+  } else if (button2.classList.contains('pressed')) {
+
+            encriptarRsa();
+
+  } else {
+
+      console.log('Ningún botón está hundido.');
+
+  }
+}
+
+function DesEncriptar() {
+
+  if (button1.classList.contains('pressed')) {
+
+      desencriptacionAlura();
+
+  } else if (button2.classList.contains('pressed')) {
+
+            desencriptarRsa();
+
+  } else {
+
+      console.log('Ningún botón está hundido.');
+
+  }
+}
+
+// Agregar eventos de clic a los botones
+button1.addEventListener('click', function() {
+  handleButtonClick(this);
+  checkButtonState(); // Verificar el estado después de hacer clic
+});
+
+button2.addEventListener('click', function() {
+  handleButtonClick(this);
+  checkButtonState(); // Verificar el estado después de hacer clic
+});
+
+
 canvas.width = W;
 canvas.height = H;
 for (var i = 0; i < columns; i++) {
   drops.push(0);
 }
 
-var str = "JavaScript Hacking Effect";
+
 
 startRain();
 
