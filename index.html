@@ -9,27 +9,33 @@
 </head>
 
 <body>
-
     <!-- Canvas para el efecto de lluvia -->
     <canvas id="canvas" style="background: #111;"></canvas>
 
-    <div class="overlay">
-        <input type="text" id="criptacion"  placeholder="Ingrese el texto que desea encriptar"  maxlength="500" size="100" class="texto-colorido">
-        <button onclick="Encriptar();">Encriptar</button>
-        <button onclick="DesEncriptar();">Desencriptar</button>
-    </div>
-    
-    <div class="overlay">
-       <input type="text" id="muestra" name="nombre" placeholder="" value="" maxlength="500" readonly size="100" class="text"> 
-       <button onclick="copiar();">Copiar</button>
-       <button onclick="pegar();" id="paste">Pegar</button>
-    </div>
-    
-    <div class="overlay">
-        <button onclick="" id="button1" class="button pressed" >Encriptacion Alura</button>
-        <button onclick="" id="button2" class="button">Encriptacion Rsa</button>
-        <button onclick="toggleRain()">Pausar/Reanudar Lluvia</button>
-     </div>
+    <header>
+        <div class="overlayHeader">
+            <button onclick="toggleRain()">Pausar/Reanudar Lluvia</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="overlay1">
+            <textarea name="text" id="criptacion"  placeholder="Ingrese el texto que desea encriptar"  maxlength="500" size="100" class="texto-colorido"></textarea>
+            <button class="button1Overlay1" onclick="Encriptar();">Encriptar</button>
+            <button class="button2Overlay1" onclick="DesEncriptar();">Desencriptar</button>
+        </div>
+        
+        <div class="overlay2">
+            <textarea name="nombre" id="muestra" placeholder="" value="" maxlength="500" readonly size="100" class="text"></textarea>
+            <button class="button1Overlay2" onclick="copiar();">Copiar</button>
+            <button class="button1Overlay2" onclick="pegar();" id="paste">Pegar</button>
+        </div>
+
+        <div class="overlay3">
+            <button onclick="" id="button1" class="button pressed" >Encriptacion Alura</button>
+            <button onclick="" id="button2" class="button">Encriptacion Rsa</button>
+        </div>
+    </main>
 
     <script src="app.js" defer></script>
 </body>

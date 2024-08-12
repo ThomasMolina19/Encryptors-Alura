@@ -1,14 +1,12 @@
 /* Estilo básico para el cuerpo */
-body, html {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body, html {
     overflow: hidden;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: #111;
 }
 
@@ -20,20 +18,75 @@ body, html {
     z-index: 1;
 }
 
+/* Header y main */
+header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: right;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Estilo para los contenedores de entrada y botones */
-.overlay {
+.overlayHeader {
     position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px; /* Espacio entre los divs */
     color: white;
     font-family: Arial, sans-serif;
 }
 
-/* Estilo para los inputs y botones */
-.overlay input, .overlay button {
+.overlay1, .overlay2 {
+    width: 650px;
+    height: 600px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    border: 1.8px solid #00cc33 ;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+.overlay1 {
+    margin-right: 50px;
+}
+
+.overlay3 {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    color: white;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+
+/* Estilo para los textarea y botones */
+#criptacion, #muestra {
+    width: 540px;
+    height: 500px;
+    margin: 10px auto;;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00cc33;
+    color: #00cc33;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    resize: none; /* Previene que el usuario cambie el tamaño del textarea */
+    overflow-y: auto; /* Asegura que haya un scroll si el texto excede la altura */
+    line-height: 1.5; /* Espacio entre lineas */
+}
+
+.button1Overlay1, .button2Overlay1, .button1Overlay2, .button2Overlay2, .overlay3 button, .overlayHeader button {
     margin: 10px 0;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -41,21 +94,35 @@ body, html {
     color: #00cc33;
     font-size: 16px;
     border-radius: 5px;
-    width: 300px; /* Ajusta el ancho de los inputs */
+    width: 200px;
+    margin-right: 20px;
 }
-
-/* Estilo para los botones al pasar el mouse */
-.overlay button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    border-color: #00ff44;
+.button1Overlay1, .button1Overlay2 {
+    margin-right: 20px;
 }
 
 /* Estilo para el input de solo lectura */
-.text {
-    background-color: rgba(0, 0, 0, 0.5);
+#muestra {
+    width: 540px;
+    height: 500px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid #00cc33;
     color: #00cc33;
     font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    resize: none; /* Previene que el usuario cambie el tamaño del textarea */
+    overflow-y: auto; /* Asegura que haya un scroll si el texto excede la altura */
+    line-height: 1.5; /* Espacio entre lineas */
+}
+
+
+/* Estilo para los botones al pasar el mouse */
+.overlay1 button:hover, .overlay2 button:hover, .overlay3 button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-color: #00ff44;
 }
 
 .button {
