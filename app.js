@@ -4,10 +4,10 @@ var n = p1 * p2;
 var phyn = (p1 - 1) * (p2 - 1);
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
-var W = window.innerWidth;
-var H = window.innerHeight;
+canvas.width = document.body.clientWidth;;
+canvas.height = document.body.clientHeight;;
 var fontSize = 16;
-var columns = Math.floor(W / fontSize);
+var columns = Math.floor(document.body.clientWidth / fontSize);
 var drops = [];
 var rainInterval;
 var isRaining = true;
@@ -45,6 +45,16 @@ var abecedario = [
   "z",
   " ",
 ];
+
+
+function resizeCanvas() {
+    stopRain();
+    // Ajusta el tamaño del canvas al tamaño del body
+    canvas.width = document.body.clientWidth;
+    canvas.height = document.body.clientHeight;
+    startRain();
+}
+
 
 
 // halla el maximo comun divisor entre phy(n) y e, para poder encontrar el e apropiado que de como resultado gcd(e,phy(n))=1
@@ -294,11 +304,12 @@ function pegar(){
 }
 function draw() {
   context.fillStyle = "rgba(0,0,0,0.05)";
-  context.fillRect(0, 0, W, H);
+  context.fillRect(0, 0, canvas.width, canvas.height);
   context.font = "700 " + fontSize + "px";
   context.fillStyle = "#00cc33";
+  console.log(canvas.width);
 
-  for (var i = 0; i < columns; i++) {
+  for (var i = 0; i < Math.floor(canvas.width / fontSize); i++) {
       var index = Math.floor(Math.random() * str.length);
       var x = i * fontSize;
       var y = drops[i] * fontSize;
@@ -395,11 +406,12 @@ button2.addEventListener('click', function() {
 });
 
 
-canvas.width = W;
-canvas.height = H;
-for (var i = 0; i < columns; i++) {
+for (var i = 0; i < Math.floor(canvas.width / fontSize); i++) {
   drops.push(0);
 }
+
+// Escucha el evento de cambio de tamaño de la ventana para ajustar el canvas
+window.addEventListener('resize', resizeCanvas);
 
 
 
