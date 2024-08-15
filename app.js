@@ -302,6 +302,23 @@ function pegar(){
     
     })
 }
+
+function validarEntrada() {
+  const input = document.getElementById('criptacion');
+  const mensaje = document.getElementById('mensaje');
+  const valor = input.value;
+
+  // Expresión regular que permite solo letras minúsculas y números
+  const regex = /^[a-z0-9]*$/;
+
+  if (!regex.test(valor)) {
+      mensaje.textContent = "No se permiten mayúsculas ni caracteres especiales.";
+      input.value = valor.slice(0, -1); // Elimina el último carácter ingresado
+  } else {
+      mensaje.textContent = ""; // Limpiar el mensaje si la entrada es válida
+  }
+}
+
 function draw() {
   context.fillStyle = "rgba(0,0,0,0.05)";
   context.fillRect(0, 0, canvas.width, canvas.height);

@@ -22,9 +22,10 @@
 
     <main>
         <div class="overlay1">
-            <textarea name="text" id="criptacion"  placeholder="Ingrese el texto que desea encriptar"  maxlength="500" size="100" class="texto-colorido"></textarea>
+            <textarea name="text" id="criptacion" oninput="validarEntrada()" placeholder="Ingrese el texto que desea encriptar"  maxlength="500" size="100" class="texto-colorido"></textarea>
             <button class="button1Overlay1" onclick="Encriptar();">Encriptar</button>
             <button class="button2Overlay1" onclick="DesEncriptar();">Desencriptar</button>
+            <p id="mensaje" style="color: red;"></p>
         </div>
         
         <div class="overlay2">
