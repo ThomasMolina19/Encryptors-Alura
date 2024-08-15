@@ -22,7 +22,7 @@ body, html {
 /* Header y main */
 header {
     width: 100%;
-    height: 50px;
+    height: 40px;
     display: flex;
     justify-content: right;
 }
@@ -34,21 +34,21 @@ main {
     justify-content: center;
 }
 
-/* Estilo para los contenedores de entrada y botones */
+/* Estilo para los contenedores*/
 .overlayHeader {
     position: relative;
     z-index: 2;
     color: white;
     font-family: Arial, sans-serif;
-    height: 50px;
-    width: 500px;
+    height: 40px;
+    width: 300px;
     display: flex;
     justify-content: right;
 }
 
 .overlay1, .overlay2 {
-    width: 650px;
-    height: 600px;
+    width: 610px;
+    height: 560px;
     position: relative;
     z-index: 2;
     display: flex;
@@ -57,10 +57,10 @@ main {
     color: white;
     font-family: Arial, sans-serif;
     border: 1.8px solid #00cc33 ;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-.overlay1 {
-    margin-right: 50px;
+.overlay2 {
+    margin-top: 20px;
 }
 
 .overlay3 {
@@ -73,18 +73,16 @@ main {
     justify-content: center;
 }
 
-
 /* Estilo para los textarea y botones */
 #criptacion, #muestra {
-    width: 540px;
-    height: 520px;
-    margin: 10px auto;;
-    padding: 10px;
+    width: 520px;
+    height: 490px;
+    margin: 8px auto;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid #00cc33;
     color: #00cc33;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 4px;
     text-align: center;
     resize: none; /* Previene que el usuario cambie el tamaño del textarea */
     overflow-y: auto; /* Asegura que haya un scroll si el texto excede la altura */
@@ -92,17 +90,20 @@ main {
 }
 
 .button1Overlay1, .button2Overlay1, .button1Overlay2, .button2Overlay2, .overlay3 button, .overlayHeader button {
-    margin: 10px 0;
-    padding: 10px;
+    width: 150px;
+    margin-bottom: 10px;
+    padding: 5px;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid #00cc33;
     color: #00cc33;
-    font-size: 16px;
-    border-radius: 5px;
-    width: 200px;
+    font-size: 14px;
+    border-radius: 4px;
 }
 .button1Overlay1, .button1Overlay2, #button1 {
-    margin-right: 20px;
+    margin-right: 17px;
+}
+#button1, #button2 {
+    margin-top: 20px;
 }
 
 /* Estilo para los botones al pasar el mouse */
@@ -121,20 +122,20 @@ main {
 .button.pressed {
     color: #111;
     background-color: #33d406; /* Color más oscuro */
-    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.4); /* Sombras internas */
+    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.4); /* Sombras internas */
     transform: translateY(2px); /* Simula la presión hacia abajo */
 }
 
 .pictureRain {
-    width: 400px;
+    width: 300px;
     height: 100%;
     display: flex;
     justify-content: right;
 }
 
 img {
-    height: 40px;
+    height: 30px;
     margin-top: 10px;
-    margin-right: 20px;
-    border-radius: 40px;
+    margin-right: 10px;
+    border-radius: 35px;
 }

@@ -416,6 +416,3 @@ window.addEventListener('resize', resizeCanvas);
 
 
 startRain();
-
-
-
