@@ -411,6 +411,11 @@ function DesEncriptar() {
   }
 }
 
+// Función que recarga la página cuando se cambia el tamaño de la ventana
+function recargarPagina() {
+  location.reload();
+}
+
 // Agregar eventos de clic a los botones
 button1.addEventListener('click', function() {
   handleButtonClick(this);
@@ -426,6 +431,9 @@ button2.addEventListener('click', function() {
 for (var i = 0; i < Math.floor(canvas.width / fontSize); i++) {
   drops.push(0);
 }
+
+// Asignar la función al evento resize
+window.onresize = recargarPagina;
 
 // Escucha el evento de cambio de tamaño de la ventana para ajustar el canvas
 window.addEventListener('resize', resizeCanvas);
