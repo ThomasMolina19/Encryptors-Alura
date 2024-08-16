@@ -4,8 +4,8 @@ var n = p1 * p2;
 var phyn = (p1 - 1) * (p2 - 1);
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
-canvas.width = document.body.clientWidth;;
-canvas.height = document.body.clientHeight;;
+canvas.width = document.body.clientWidth;
+canvas.height = document.body.clientHeight;
 var fontSize = 16;
 var columns = Math.floor(document.body.clientWidth / fontSize);
 var drops = [];
@@ -46,12 +46,31 @@ var abecedario = [
   " ",
 ];
 
+//Posición footer
+const bodyHeight = document.body.clientHeight;
+const headerHeight = document.querySelector('header').offsetHeight;
+const mainHeight = document.querySelector('main').offsetHeight;
+const footerHeight = bodyHeight - headerHeight - mainHeight;
+document.querySelector('footer').style.height = `${footerHeight}px`;
 
 function resizeCanvas() {
     stopRain();
+    //Posición footer al cambiar tamaño
+    const headerHeight = document.querySelector('header').offsetHeight;
+    document.querySelector('footer').style.height = `${headerHeight}px`;
+    const bodyHeight = document.body.clientHeight;
+    const mainHeight = document.querySelector('main').offsetHeight;
+    const footerHeight = bodyHeight - headerHeight - mainHeight;
+    document.querySelector('footer').style.height = `${footerHeight}px`;
     // Ajusta el tamaño del canvas al tamaño del body
     canvas.width = document.body.clientWidth;
     canvas.height = document.body.clientHeight;
+    //Que no aparezca placeholder de otro tamaño de pantalla al cambiar de tamaño
+    if (document.querySelector('.ascii-art').style.display == 'block') {
+      document.querySelector('.placeholderImageMobile').style.display = 'none';
+      document.querySelector('.placeholderImageTablet').style.display = 'none';
+      document.querySelector('.placeholderImageDesktop').style.display = 'none';
+    }
     startRain();
 }
 
@@ -426,6 +445,16 @@ function showButtons() {
 
   document.querySelector('.button1Overlay2').style.display = 'block';
   document.querySelector('.button2Overlay2').style.display = 'block';
+  document.querySelector('.ascii-art').style.display = 'block';
+  if (document.body.clientWidth < 630) {
+    document.querySelector('.placeholderImageMobile').style.display = 'none';
+  }
+  if (document.body.clientWidth > 629 && document.body.clientWidth < 1135) {
+    document.querySelector('.placeholderImageTablet').style.display = 'none';
+  }
+  if (document.body.clientWidth > 1134) {
+    document.querySelector('.placeholderImageDesktop').style.display = 'none';
+  }
 
 }
 

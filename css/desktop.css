@@ -21,9 +21,12 @@ body, html {
 
 /* Header, main y footer*/
 header {
+    position: relative;
+    z-index: 2;
     width: 100%;
-    height: 50px;
+    height: 60px;
     display: flex;
+    background-color: #57e277;
 }
 
 main {
@@ -31,6 +34,16 @@ main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    font-family: Arial Black;
+    color:#111;
+    width: 100vw;
 }
 
 /* Estilo para los contenedores de entrada y botones */
@@ -86,6 +99,24 @@ main {
     overflow-y: auto; /* Asegura que haya un scroll si el texto excede la altura */
     line-height: 1.5; /* Espacio entre lineas */
 }
+#muestra {
+    display: none;
+}
+
+.placeholderImageMobile {
+    display: none;
+}
+
+.placeholderImageTablet {
+    display: none;
+}
+
+.placeholderImageDesktop {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
 
 #mensaje {
     width: 100%;
@@ -125,7 +156,7 @@ main {
     transition: all 0.2s ease-in-out; /* Aumentar la duración para una animación más fluida */
 }
 
- /* Simula el estado "hundido" del botón */
+/* Simula el estado "hundido" del botón */
 .button.pressed {
     color: #111;
     background-color: #33d406; /* Color más oscuro */
@@ -133,6 +164,7 @@ main {
     transform: translateY(2px); /* Simula la presión hacia abajo */
 }
 
+/* Contenedores imágenes e imágenes */
 .pictureAlura {
     width: 50%;
     height: 100%;
@@ -156,14 +188,37 @@ img {
     margin-left: 20px;
 }
 
-textarea.ascii-art::placeholder {
-    font-size: 4.5px; /* Tamaño de fuente del placeholder */
-    color: #999; /* Color del texto del placeholder */
+/* Made By Thomas Molina */
+
+.divMadeBy {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    background-color: #00cc33;
+    margin-top: auto;
 }
 
+.madeBy {
+    height: 50px;
+    padding-top: 7px;
+    font-size: 25px;
+}
+
+.linkgit{
+    height: 30px;
+    background-color: white;
+    border-radius: fit-content;
+    margin-top: 11px;
+}
+
+/* Arreglo margin responsive en desktop */
 @media (min-width: 1300px) {
     .overlay1 {
         margin-right: 10px;
+    }
+    .overlay2 {
+        margin-top: 20px;
     }
 }
 
