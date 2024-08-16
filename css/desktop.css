@@ -157,7 +157,7 @@ img {
 }
 
 textarea.ascii-art::placeholder {
-    font-size: 4.7px; /* Tamaño de fuente del placeholder */
+    font-size: 4.5px; /* Tamaño de fuente del placeholder */
     color: #999; /* Color del texto del placeholder */
 }
 
