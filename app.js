@@ -319,7 +319,7 @@ function validarEntrada() {
 
   } else {
       mensaje.style.color = "rgb(234, 255, 0)";
-      mensaje.textContent = "Solo letras minúsculas y sin acentos"; // Limpiar el mensaje si la entrada es válida
+      mensaje.textContent = "ⓘ Solo letras minúsculas y sin acentos"; // Limpiar el mensaje si la entrada es válida
       
 
   }

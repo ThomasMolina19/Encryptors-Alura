@@ -24,7 +24,6 @@ header {
     width: 100%;
     height: 30px;
     display: flex;
-    justify-content: right;
 }
 
 main {
@@ -36,14 +35,13 @@ main {
 
 /* Estilo para los contenedores*/
 .overlayHeader {
+    width: 100%;
     position: relative;
     z-index: 2;
     color: white;
     font-family: Arial, sans-serif;
     height: 30px;
-    width: 200px;
     display: flex;
-    justify-content: right;
 }
 
 .overlay1, .overlay2 {
@@ -60,7 +58,7 @@ main {
     margin-top: 10px;
 }
 .overlay2 {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .overlay3 {
@@ -76,7 +74,7 @@ main {
 /* Estilo para los textarea y botones */
 #criptacion, #muestra {
     width: 300px;
-    height: 230px;
+    height: 225px;
     margin: 5px auto;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid #00cc33;
@@ -89,8 +87,17 @@ main {
     line-height: 1.5; /* Espacio entre lineas */
 }
 
+#mensaje {
+    width: 100%;
+    color: #00cc33;
+    font-size: 8px;
+    padding-bottom: 2px;
+    margin-left: 15px;
+}
+
 .button1Overlay1, .button2Overlay1, .button1Overlay2, .button2Overlay2, .overlay3 button, .overlayHeader button {
     width: 115px;
+    height: 24px;
     margin-bottom: 7px;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -101,6 +108,10 @@ main {
 }
 .button1Overlay1, .button1Overlay2, #button1 {
     margin-right: 15px;
+}
+.button1Overlay2, .button2Overlay2 {
+    margin-top: 13px;
+    display: none;
 }
 #button1, #button2 {
     margin-top: 15px;
@@ -126,8 +137,14 @@ main {
     transform: translateY(2px); /* Simula la presión hacia abajo */
 }
 
+.pictureAlura {
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
 .pictureRain {
-    width: 200px;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: right;
@@ -138,4 +155,12 @@ img {
     margin-top: 5px;
     margin-right: 10px;
     border-radius: 30px;
+}
+.imgAlura {
+    margin-left: 10px;
+}
+
+textarea.ascii-art::placeholder {
+    font-size: 2px; /* Tamaño de fuente del placeholder */
+    color: #999; /* Color del texto del placeholder */
 }

@@ -17,6 +17,7 @@
 
     <header>
         <div class="overlayHeader">
+            <picture class="pictureAlura"><img class="imgAlura" src="./img/alura1.png" alt=""></picture>
             <picture class="pictureRain" onclick="toggleRain()"><img src="./img/rain3.png" alt=""></picture>
         </div>
     </header>
@@ -25,11 +26,11 @@
         
         <div class="overlay1">
             <textarea name="text" id="criptacion" oninput="validarEntrada()" placeholder="Ingrese el texto que desea encriptar"  maxlength="500" size="100" class="texto-colorido"></textarea>
+            <p id="mensaje" style="color: rgb(234, 255, 0);">ⓘ Solo letras minúsculas y sin acentos</p>
             <button class="button1Overlay1" onclick="Encriptar();">Encriptar</button>
             <button class="button2Overlay1" onclick="DesEncriptar();">Desencriptar</button>
-            <p id="mensaje" style="color: rgb(234, 255, 0);">Solo letras minúsculas y sin acentos</p>
         </div>
-        
+
         <div class="overlay2">
             <textarea name="nombre" id="muestra" class="ascii-art" placeholder="                             .                    .       .         .        =*                     
 .    .               .  .   .      .                     .             .               .           
@@ -108,7 +109,7 @@
             <button class="button1Overlay2" onclick="copiar();">Copiar</button>
             <button class="button2Overlay2" onclick="pegar();" id="paste">Pegar</button>
         </div>
-      
+
         <div class="overlay3">
             <button onclick="" id="button1" class="button pressed" >Encriptacion Alura</button>
             <button onclick="" id="button2" class="button">Encriptacion Rsa</button>
