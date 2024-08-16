@@ -312,11 +312,18 @@ function validarEntrada() {
   const regex = /^[a-z0-9 ]*$/;
 
   if (!regex.test(valor)) {
+    
       mensaje.textContent = "No se permiten mayúsculas ni caracteres especiales.";
       input.value = valor.slice(0, -1); // Elimina el último carácter ingresado
+      mensaje.style.color = "red";
+
   } else {
-      mensaje.textContent = ""; // Limpiar el mensaje si la entrada es válida
+      mensaje.style.color = "rgb(234, 255, 0)";
+      mensaje.textContent = "Solo letras minúsculas y sin acentos"; // Limpiar el mensaje si la entrada es válida
+      
+
   }
+ 
 }
 
 function draw() {
@@ -427,9 +434,29 @@ for (var i = 0; i < Math.floor(canvas.width / fontSize); i++) {
   drops.push(0);
 }
 
+
+
 // Escucha el evento de cambio de tamaño de la ventana para ajustar el canvas
 window.addEventListener('resize', resizeCanvas);
 
+const textarea = document.getElementById('muestra');
+
+const text1 = "Ningún mensaje fue encontrado.";
+const text2 = "Ingresa el texto que desees encriptar o desencriptar.";
+
+// Combina ambos textos con un salto de línea y una estructura de división
+textarea.value = text1 + "\n\n" + text2;
+
+// Alinear el segundo mensaje en el centro verticalmente
+const middleText = document.createElement('div');
+middleText.id = 'middle-text';
+middleText.innerText = text2;
+
+textarea.value = text1;
+textarea.insertAdjacentHTML('beforeend', `\n\n${text2}`);
+
+// Deshabilitar la edición del textarea
+textarea.setAttribute('readonly', 'readonly');
 
 
 startRain();

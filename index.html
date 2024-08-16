@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Game</title>
+    <title>Encriptadores</title>
+    <link rel="icon" href="./img/candado (1).png" type="image/png">
     <link rel="stylesheet" href="./css/mobile.css">
     <link rel="stylesheet" href="./css/tablet.css" media="screen and (min-width: 630px)">
     <link rel="stylesheet" href="./css/desktop.css" media="screen and (min-width: 1135px)">
@@ -21,15 +22,16 @@
     </header>
 
     <main>
+        
         <div class="overlay1">
             <textarea name="text" id="criptacion" oninput="validarEntrada()" placeholder="Ingrese el texto que desea encriptar"  maxlength="500" size="100" class="texto-colorido"></textarea>
             <button class="button1Overlay1" onclick="Encriptar();">Encriptar</button>
             <button class="button2Overlay1" onclick="DesEncriptar();">Desencriptar</button>
-            <p id="mensaje" style="color: red;"></p>
+            <p id="mensaje" style="color: rgb(234, 255, 0);">Solo letras minúsculas y sin acentos</p>
         </div>
         
         <div class="overlay2">
-            <textarea name="nombre" id="muestra" placeholder="" value="" maxlength="500" readonly size="100" class="text"></textarea>
+            <textarea name="nombre" id="muestra" placeholder="Ningún mensaje fue encontrado. Ingresa el texto que desees encriptar o desencriptar." value="" maxlength="500" readonly size="100" class="text"></textarea>
             <button class="button1Overlay2" onclick="copiar();">Copiar</button>
             <button class="button1Overlay2" onclick="pegar();" id="paste">Pegar</button>
         </div>
