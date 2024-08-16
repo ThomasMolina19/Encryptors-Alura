@@ -34,14 +34,14 @@ A todos las letras se les asigna un valor numerico y este es el numero que se en
 
 Y así sucesivamente hasta llegar a la 'z'. Adicionalmente, agregamos el espacio representado por el ' ', en este algoritmo donde la llave privada son los primos p y q, por motivo pedagógico estos se fijan y se les da el valor de 167 y 149. 
 
-###Nota sobre el Encriptador RSA
+### Nota sobre el Encriptador RSA
 Aunque el encriptador de Alura era obligatorio para este proyecto, decidí incluir también un encriptador RSA. Esta decisión fue motivada por mi interés en aprender más sobre criptografía y cómo implementar algoritmos más complejos en JavaScript. El encriptador RSA ofrece un método robusto y seguro para encriptar datos, lo que me permitió explorar conceptos avanzados en programación y seguridad informática.
 
-###Links
+### Links
 
 `<link>` : <https://thomasmolina19.github.io/Encryptors-Alura/>
 
-###Licencia
+### Licencia
 Este proyecto está licenciado bajo la MIT License.
 
-###End
+### End
