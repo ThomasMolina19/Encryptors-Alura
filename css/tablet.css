@@ -193,6 +193,10 @@ img {
     margin-left: 10px;
 }
 
+.pictureAlura img:hover, .pictureRain img:hover {
+    height: 32px;
+}
+
 /* Made By Thomas Molina */
 
 .divMadeBy {
@@ -214,4 +218,8 @@ img {
     height: 25px;
     background-color: white;
     border-radius: fit-content;
+}
+
+.linkgit:hover {
+    height: 31px;
 }
