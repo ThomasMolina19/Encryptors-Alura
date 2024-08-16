@@ -389,10 +389,12 @@ function Encriptar() {
   if (button1.classList.contains('pressed')) {
 
       encriptacionAlura();
+      showButtons();
 
   } else if (button2.classList.contains('pressed')) {
 
             encriptarRsa();
+            showButtons();
 
   } else {
 
@@ -406,16 +408,25 @@ function DesEncriptar() {
   if (button1.classList.contains('pressed')) {
 
       desencriptacionAlura();
+      showButtons();
 
   } else if (button2.classList.contains('pressed')) {
 
             desencriptarRsa();
+            showButtons();
 
   } else {
 
       console.log('Ningún botón está hundido.');
 
   }
+}
+// Muestra los botones
+function showButtons() {
+
+  document.querySelector('.button1Overlay2').style.display = 'block';
+  document.querySelector('.button2Overlay2').style.display = 'block';
+
 }
 
 // Agregar eventos de clic a los botones
@@ -439,24 +450,6 @@ for (var i = 0; i < Math.floor(canvas.width / fontSize); i++) {
 // Escucha el evento de cambio de tamaño de la ventana para ajustar el canvas
 window.addEventListener('resize', resizeCanvas);
 
-const textarea = document.getElementById('muestra');
-
-const text1 = "Ningún mensaje fue encontrado.";
-const text2 = "Ingresa el texto que desees encriptar o desencriptar.";
-
-// Combina ambos textos con un salto de línea y una estructura de división
-textarea.value = text1 + "\n\n" + text2;
-
-// Alinear el segundo mensaje en el centro verticalmente
-const middleText = document.createElement('div');
-middleText.id = 'middle-text';
-middleText.innerText = text2;
-
-textarea.value = text1;
-textarea.insertAdjacentHTML('beforeend', `\n\n${text2}`);
-
-// Deshabilitar la edición del textarea
-textarea.setAttribute('readonly', 'readonly');
 
 
 startRain();

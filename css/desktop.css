@@ -100,6 +100,9 @@ main {
     margin-right: 20px;
 }
 
+.button1Overlay2, .button2Overlay2{
+    display: none;
+}
 /* Estilo para los botones al pasar el mouse */
 .overlay1 button:hover, .overlay2 button:hover, .overlay3 button:hover {
     background-color: rgba(170, 255, 155, 0.9);
@@ -134,6 +137,11 @@ img {
     border-radius: 40px;
 }
 
+textarea.ascii-art::placeholder {
+    font-size: 4.7px; /* Tamaño de fuente del placeholder */
+    color: #999; /* Color del texto del placeholder */
+}
+
 @media (min-width: 1300px) {
     .overlay1 {
         margin-right: 10px;
@@ -144,21 +152,4 @@ img {
     .overlay1 {
         margin-right: 50px;
     }
-}
-/* Estilo para centrar el texto en la parte superior */
-.text {
-    width: 100%;
-    height: 200px;
-    text-align: center;
-    padding-top: 10px; /* Ajusta este valor para centrar verticalmente el primer mensaje */
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    resize: none; /* Desactiva el redimensionamiento */
-}
-
-/* Estilo para la segunda parte del texto */
-.text #middle-text {
-    position: relative;
-    top: 40%; /* Ajusta este valor para centrar el texto verticalmente en el medio */
-    transform: translateY(-50%);
 }
