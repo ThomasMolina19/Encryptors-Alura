@@ -47,21 +47,16 @@ var abecedario = [
 ];
 
 //Posición footer
-const bodyHeight = document.body.clientHeight;
-const headerHeight = document.querySelector('header').offsetHeight;
-const mainHeight = document.querySelector('main').offsetHeight;
-const footerHeight = bodyHeight - headerHeight - mainHeight;
-document.querySelector('footer').style.height = `${footerHeight}px`;
+if (document.body.clientWidth > 1134) {
+  const headerHeight = document.querySelector('header').offsetHeight;
+  const mainHeight = document.querySelector('main').offsetHeight;
+  const windowHeight = window.innerHeight;
+  const footHeight = window.innerHeight - headerHeight - mainHeight;
+  document.querySelector('footer').style.height = `${footHeight + 25}px`;
+}
 
 function resizeCanvas() {
     stopRain();
-    //Posición footer al cambiar tamaño
-    const headerHeight = document.querySelector('header').offsetHeight;
-    document.querySelector('footer').style.height = `${headerHeight}px`;
-    const bodyHeight = document.body.clientHeight;
-    const mainHeight = document.querySelector('main').offsetHeight;
-    const footerHeight = bodyHeight - headerHeight - mainHeight;
-    document.querySelector('footer').style.height = `${footerHeight}px`;
     // Ajusta el tamaño del canvas al tamaño del body
     canvas.width = document.body.clientWidth;
     canvas.height = document.body.clientHeight;
@@ -70,6 +65,20 @@ function resizeCanvas() {
       document.querySelector('.placeholderImageMobile').style.display = 'none';
       document.querySelector('.placeholderImageTablet').style.display = 'none';
       document.querySelector('.placeholderImageDesktop').style.display = 'none';
+    }
+    //Posición footer al cambiar tamaño
+    if (document.body.clientWidth < 630) {
+      document.querySelector('footer').style.height = `${35}px`;;
+    }
+    if (document.body.clientWidth > 629 && document.body.clientWidth < 1135) {
+      document.querySelector('footer').style.height = `${40}px`;
+    }
+    if (document.body.clientWidth > 1134) {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      const mainHeight = document.querySelector('main').offsetHeight;
+      const windowHeight = window.innerHeight;
+      const footHeight = window.innerHeight - headerHeight - mainHeight;
+      document.querySelector('footer').style.height = `${footHeight + 25}px`;
     }
     startRain();
 }

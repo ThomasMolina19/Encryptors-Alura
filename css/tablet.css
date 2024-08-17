@@ -26,7 +26,7 @@ header {
     width: 100%;
     height: 50px;
     display: flex;
-    background-color: #57e277;
+    background-color: whitesmoke;
 }
 
 main {
@@ -188,6 +188,7 @@ img {
     margin-top: 10px;
     margin-right: 10px;
     border-radius: 35px;
+    cursor: pointer;
 }
 .imgAlura {
     margin-left: 10px;
@@ -204,7 +205,7 @@ img {
     height: fit-content;
     display: flex;
     justify-content: center;
-    background-color: #00cc33;
+    background-color: whitesmoke;
     margin-top: auto;
 }
 
@@ -221,5 +222,5 @@ img {
 }
 
 .linkgit:hover {
-    height: 31px;
+    height: 26px;
 }

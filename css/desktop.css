@@ -26,7 +26,7 @@ header {
     width: 100%;
     height: 60px;
     display: flex;
-    background-color: #57e277;
+    background-color: whitesmoke;
 }
 
 main {
@@ -44,6 +44,7 @@ footer {
     font-family: Arial Black;
     color:#111;
     width: 100vw;
+    
 }
 
 /* Estilo para los contenedores de entrada y botones */
@@ -176,7 +177,6 @@ footer {
     height: 100%;
     display: flex;
     justify-content: right;
-    cursor: pointer;
 }
 
 img {
@@ -184,6 +184,7 @@ img {
     margin-top: auto 0;
     margin-right: 20px;
     border-radius: 40px;
+    cursor: pointer;
 }
 .imgAlura {
     margin-left: 20px;
@@ -200,7 +201,7 @@ img {
     height: fit-content;
     display: flex;
     justify-content: center;
-    background-color: #00cc33;
+    background-color: whitesmoke;
     margin-top: auto;
 }
 
